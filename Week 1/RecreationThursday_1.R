@@ -391,6 +391,8 @@ size=1) +
 
 # stitch into gif and save
 #--- --- --- --- --- --- --- --- --- ---
+# do run this command, on mac - at least, you need to have imageMagik installed
+# (on the computer, it's not an R package)
 setwd(here::here("Week 1")) # can I do this without setting wd?? not sure
 system(command = "convert -delay 20 *.png curves.gif")
 
