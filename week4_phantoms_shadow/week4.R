@@ -6,8 +6,7 @@
 library(ggplot2)
 library(dplyr)
 library(tidyr)
-library(grDevices)
-library(ragg)
+library(PNWColors)
 
 # set colors
 # ----------------------------------------------------
