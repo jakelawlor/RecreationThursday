@@ -35,6 +35,8 @@ set.seed(13)
 
 
 # rotate and add colors ---------------------------------------------------
+set.seed(21)
+# good seeds: 5, 14, 20, 21, 29
 polygonsdf <- polygons %>%
   
   # rotate some groups randomly
@@ -65,13 +67,12 @@ polygonsdf <- polygons %>%
   mutate(color = sample(pal,4))  %>%
   #mutate(color = pal)
   unnest(cols = c(data))  %>%
-  mutate(color = colorspace::lighten(color, amount = .1)) 
+  mutate(color = colorspace::lighten(color, amount = .18)) 
   
 
 
 
 # start plot --------------------------------------------------------------
-
 plot <- 
 polygonsdf %>%  
 
@@ -95,6 +96,12 @@ plot
 
 
 # save --------------------------------------------------------------------
-ggsave()
 
-
+ggsave(plot,
+       file = here::here("week4_phantoms_shadow","plot.png"), 
+       width =6,
+       height = 6,
+       dpi=600,
+       units = "in",
+       limitsize = F,
+       device = 'png')
